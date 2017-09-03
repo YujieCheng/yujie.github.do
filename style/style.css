@@ -31,7 +31,7 @@ div.container{
     display: flex;
 }
 div.nav-wrap{
-	width:900px;
+	width:1000px;
 	margin:0 auto;
 }
 div.content{
@@ -43,7 +43,17 @@ div.recommend{
 	width:262px;
 	background:white;
 	display:inline-block;
-	height:100px
+	margin-top:10px;
+}
+h5{
+	font-weight:bold;
+}
+.recommend-list ul{
+	list-style:none;
+	padding-left:15px;
+}
+.recommend-list ul li{
+	padding:5px 0;
 }
 .page-item{
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.1);
@@ -53,8 +63,9 @@ div.recommend{
 	background: white;
     padding: 10px 20px;
     border-radius: 5px;
+	margin-top:10px;
 }
-.page-titile{
+.page-title{
     font-weight: bold;
     font-size: 18px;
 }
@@ -76,6 +87,43 @@ h3{
 .page-descript a{
 	color:#ccc
 }
+.page-foot{
+	margin-top:10px
+}
+button.btn:focus,
+button.btn:active{
+	outline:0px;
+	-webkit-box-shadow: none;
+    box-shadow:none
+}
+button.btn:focus:active{
+	outline:0px
+}
+.btn-great{
+	border:0px;
+	background:RGBA(45,132,204,.5);
+	color:white
+}
+.btn-great i,
+.btn-comments i,
+.btn-share i{	
+	margin-right:5px;
+}
+.btn-comments{
+	border:0px;
+	background:white;
+	color:#ccc;
+}
+.btn-share{
+	border:0px;
+	background:white;
+	color:#ccc;	
+}
+.btn-great:hover{
+	border:0px;
+	background:RGBA(45,132,204,.8);
+	color:white
+}
 .tool{
 	background:white;
 	margin:10px 0;
@@ -90,5 +138,14 @@ h3{
 .tool-btn{
 	font-size:18px;
 	display:inline-block;
-	padding:10px 0
+	padding:10px 0;
+	background:none;
+	border:0px
+}
+.tool-btn:focus{
+	border:0px;
+	outline:0px
+}
+.tool-btn:hover{
+	color:steelblue
 }
