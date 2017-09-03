@@ -1,7 +1,17 @@
 .head{
 	height:60px;
 	background:white;
-	
+}
+header{
+	height:60px;
+	background:white;
+	position:fixed;
+	width:100%;
+	top:0;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 body{
 	background:#f3f3f3;
@@ -148,4 +158,46 @@ button.btn:focus:active{
 }
 .tool-btn:hover{
 	color:steelblue
+}
+.article{
+	background:white;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;	
+}
+.article-header{
+	width:1000px;
+	margin:0 auto;
+	padding:20px 0;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;	
+}
+.header-tool .btn{
+	margin:10px 0;
+	color:RGB(133,144,166)
+}
+.tag{
+	background:rgb(238, 244, 250);
+	padding:10px 10px;
+	border-radius:10px;
+	margin-right:10px;
+	font-size:16px
+}
+.article-title-content{
+	width:690px;
+	display:inline-block;
+}
+.article-title-info{
+	width:260px;
+	display:inline-block;
+}
+.article-content{
+	margin:20px 0
+}
+.article-content p{
+	 text-indent:32px
+}
+span.php{
+	display:block;
 }

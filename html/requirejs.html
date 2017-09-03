@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../dependence/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../dependence/FontIcon/css/font-awesome.min.css"/>
+
+<script src="../dependence/js/jquery.js" type="text/javascript"></script>
+<script src="../dependence/syntax/dist/jquery.syntax.js" type="text/javascript"></script>
+<script src="../dependence/syntax/dist/jquery.syntax.cache.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../style/style.css"/>
+
+		<script type="text/javascript">
+			$(function() {
+				jQuery.syntax();
+			});
+		</script>
+
+</head>
+<body>
+<div class="head">
+	<header>
+		<div class="nav-wrap">
+			<ul class="nav navbar-nav">
+				<li><a href="#">HTML</a></li>
+				<li><a href="#">JavaScript</a></li>
+				<li><a href="#">Java</a></li>
+			</ul>
+		</div>
+	</header>
+</div>
+<div class="article">
+	<div class="article-header">
+		<div class="article-title-content">
+			<div class="header-tag">
+				<span class="tag"><a href="#">requirejs</a></span>
+				<span class="tag"><a href="#">javascript</a></span>
+				<span class="tag"><a href="#">前端</a></span>
+			</div>
+			<div class="header-title"><h1>requirejs入门</h1></div>
+			<div class="header-tool">
+				<button class="btn btn-comments"><i class="icon-comments"></i>评论</button>
+				<button class="btn btn-share"><i class="icon-share"></i>分享</button>
+			</div>
+		</div>
+		<div class="article-title-info">
+			<button class="btn btn-success" style="margin-right:20px">
+				<div class="icon-thumbs-up"></div>
+				<div>512</div>
+			</button>
+			<button class="btn btn-success">
+				<div class="icon-star"></div>
+				<div>512</div>
+			</button>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="content">
+		<div class="page-list">
+			<div class="page-item">
+				<div class="page-info">2017年9月3日 18点46分</div>
+				<div class="article-content">
+					<p>
+						现代的辅助技术能够识别并朗读由 CSS 生成的内容和特定的 Unicode 字符。为了避免 屏幕识读设备抓取非故意的和可能产生混淆的输出内容（尤其是当图标纯粹作为装饰用途时），我们为这些图标设置了 aria-hidden="true" 属性。
+					</p>
+					<pre style="overflow:scroll;height:500px">
+						<code class="syntax javascript">require.config({
+	baseUrl:"assets",
+	paths:{
+		bootstrap:"../bootstrap/js/bootstrap",
+		test:"../js/nicescroll",
+		"datatables.net":"../DataTables/media/js/jquery.dataTables",
+		datatable:"../DataTables/media/js/dataTables.bootstrap"
+	},
+	shim:{
+		bootstrap:{
+			deps:['jquery']
+		},
+		test:{
+			deps:['jquery']
+		}
+	}
+});
+var data = [{
+		"name" : "zhangsan",
+		"age"  :  "23",
+		"job"  : "teacher"
+	},{
+		"name" : "lisi",
+		"age"  :  "23",
+		"job"  : "teacher"
+	},{
+		"name" : "wangwu",
+		"age"  :  "23",
+		"job"  : "teacher"
+	},
+]
+require(["datatables.net","datatable","test"]);
+require(["bootstrap","test"],function(bs,test){
+	$("html").niceScroll();
+	/* $("#test").DataTable({
+		"ajax":"test.txt",
+		"columns": [
+            { "data": "id" },
+            { "data": "age" },
+            { "data": "job" }
+        ],
+		"columnDefs": [{
+			"targets": 0,
+			"data": null, // Use the full data source object for the renderer's source
+			"render": function ( data, type, full, meta ) {
+				return '<input type="checkbox" value="'+data+'"/>';
+			}
+		}]
+	}); */
+})
+</code>
+					</pre>
+				</div>
+				<div class="page-foot">
+					<button class="btn btn-great"><i class="icon-heart" style="color:white"></i>155</button>
+					<button class="btn btn-comments"><i class="icon-comments" style="color:#ccc"></i>评论</button>
+					<button class="btn btn-share"><i class="icon-share" style="color:#ccc"></i>分享</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="recommend">
+		<div style="padding:10px;border-bottom:1px rgb(240, 242, 247) solid">
+			<h5>相关文章</h5>
+		</div>
+		<div class="recommend-list">
+			<ul>
+				<li><a href="">requirejs 入门</a></li>
+				<li><a href="">requirejs 入门</a></li>
+				<li><a href="">requirejs 入门</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>
