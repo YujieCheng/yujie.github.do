@@ -1,0 +1,42 @@
+.head{
+	height:60px;
+	background:white;
+	
+}
+body{
+	background:#f3f3f3;
+	font-family:Helvetica,Arial,"Lucida Family",Verdana,Tahoma,'Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei',sans-serif;
+}
+.nav>li>a{
+	padding:20px 30px;
+	color:#404040;
+}
+.nav>li>a:hover{
+	background:RGBA(70,130,180,.8);
+	color:white
+}
+div.container{
+	width:1000px;
+	background:#f3f3f3;
+	padding:0 15px;
+	margin:0 auto;
+	margin-top:10px;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+div.nav-wrap{
+	width:900px;
+	margin:0 auto;
+}
+div.content{
+	width:694px;
+	margin-right:10px;
+	display:inline-block;
+}
+div.recommend{
+	width:262px;
+	background:white;
+	display:inline-block;
+	height:100px
+}
