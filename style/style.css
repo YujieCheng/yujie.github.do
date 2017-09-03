@@ -13,7 +13,12 @@ body{
 }
 .nav>li>a:hover{
 	background:RGBA(70,130,180,.8);
-	color:white
+	color:white;
+}
+
+.nav>li>a:focus{
+	background:RGBA(70,130,180,.8);
+	color:white;
 }
 div.container{
 	width:1000px;
@@ -39,4 +44,51 @@ div.recommend{
 	background:white;
 	display:inline-block;
 	height:100px
+}
+.page-item{
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	background: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.page-titile{
+    font-weight: bold;
+    font-size: 18px;
+}
+h3{
+	font-weight:bold;
+}
+.page-info{
+	font-size: 8px;
+    padding: 3px;
+}
+.page-descript{
+	padding:10px 0;
+	font-size:14px;
+}
+.page-descript:hover{
+	color:#808080;
+	cursor:pointer;
+}
+.page-descript a{
+	color:#ccc
+}
+.tool{
+	background:white;
+	margin:10px 0;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	background: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.tool-btn{
+	font-size:18px;
+	display:inline-block;
+	padding:10px 0
 }
