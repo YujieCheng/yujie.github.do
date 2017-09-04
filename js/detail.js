@@ -2,7 +2,7 @@
 $(function(){
 	$.get("../data/requirejs.json",function(d){
 		var vm=new Vue({
-			el:"#articleList",
+			el:"#content",
 			data:{
 				"article":d
 			}
