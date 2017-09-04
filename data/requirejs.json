@@ -1,0 +1,6 @@
+﻿{
+	"title":"afd",
+	"time":"sdfg",
+	"content":'<p>现代的辅助技术能够识别并朗读由 CSS 生成的内容和特定的 Unicode 字符。为了避免 屏幕识读设备抓取非故意的和可能产生混淆的输出内容（尤其是当图标纯粹作为装饰用途时），我们为这些图标设置了 aria-hidden="true"属性。</p><pre style="overflow:scroll;height:500px"><code class="syntax javascript">require.config({baseUrl:"assets",paths:{bootstrap:"../bootstrap/js/bootstrap",test:"../js/nicescroll","datatables.net":"../DataTables/media/js/jquery.dataTables",datatable:"../DataTables/media/js/dataTables.bootstrap"},shim:{bootstrap:{deps:[\'jquery\']},test:{deps:[\'jquery\']}}});var data=[{"name":"zhangsan","age":"23","job":"teacher"},{"name":"lisi","age":"23","job":"teacher"},{"name":"wangwu","age":"23","job":"teacher"},]require(["datatables.net","datatable","test"]);require(["bootstrap","test"],function(bs,test){$("html").niceScroll();})</code></pre>',
+	"recommend":[]
+}
