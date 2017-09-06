@@ -32,7 +32,7 @@ body{
 }
 div.container{
 	width:1000px;
-	background:#f3f3f3;
+	background:RGBA(0,0,0,0);
 	padding:0 15px;
 	margin:0 auto;
 	margin-top:10px;
