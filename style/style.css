@@ -196,8 +196,6 @@ button.btn:focus:active{
 	margin:20px 0
 }
 .article-content p{
-	 text-indent:32px
-}
-span.php{
-	display:block;
+	 text-indent:32px;
+	 line-height:28px;
 }

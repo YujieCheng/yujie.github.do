@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>陈玉杰的部落格</title>
+<link rel="stylesheet" href="../dependence/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../dependence/FontIcon/css/font-awesome.min.css"/>
+<script src="../dependence/js/jquery.js" type="text/javascript"></script>
+<script src="../dependence/syntax/dist/jquery.syntax.js" type="text/javascript"></script>
+<script src="../dependence/syntax/dist/jquery.syntax.cache.js" type="text/javascript"></script>
+<script src="../dependence/vue/vue.min.js"></script>
+<script src="../js/detail.js"></script>
+<link rel="stylesheet" href="../style/style.css"/>
+
+		<script type="text/javascript">
+			$(function() {
+				jQuery.syntax();
+			});
+		</script>
+
+</head>
+<body>
+<div class="head">
+	<header>
+		<div class="nav-wrap">
+			<!--<ul class="nav navbar-nav">
+				<li><a href="#">HTML</a></li>
+				<li><a href="#">JavaScript</a></li>
+				<li><a href="#">Java</a></li>
+			</ul>-->
+			<img height="60px" src="../img/8.png"/>
+		</div>
+	</header>
+</div>
+<div id="content">
+<div class="article">
+	<div class="article-header">
+		<div class="article-title-content">
+			<div class="header-tag">
+				<span class="tag"><a href="#">requirejs</a></span>
+				<span class="tag"><a href="#">javascript</a></span>
+				<span class="tag"><a href="#">前端</a></span>
+			</div>
+			<div class="header-title"><h1>{{article.title}}</h1></div>
+			<div class="header-tool">
+				<button class="btn btn-comments"><i class="icon-comments"></i>评论</button>
+				<button class="btn btn-share"><i class="icon-share"></i>分享</button>
+			</div>
+		</div>
+		<div class="article-title-info">
+			<button class="btn btn-success" style="margin-right:20px">
+				<div class="icon-thumbs-up"></div>
+				<div>123</div>
+			</button>
+			<button class="btn btn-success">
+				<div class="icon-star"></div>
+				<div>512</div>
+			</button>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="content">
+		<div class="page-list">
+			<div class="page-item">
+				<div class="page-info">{{article.time}}</div>
+				<div v-html="article.content" class="article-content">
+				</div>
+				<div class="page-foot">
+					<button class="btn btn-great"><i class="icon-heart" style="color:white"></i>123</button>
+					<button class="btn btn-comments"><i class="icon-comments" style="color:#ccc"></i>评论</button>
+					<button class="btn btn-share"><i class="icon-share" style="color:#ccc"></i>分享</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="recommend">
+		<div style="padding:10px;border-bottom:1px rgb(240, 242, 247) solid">
+			<h5>相关文章</h5>
+		</div>
+		<div class="recommend-list">
+			<ul>
+				<li v-for="item in article.recommend"><a v-bind:href="item.url">{{item.title}}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>

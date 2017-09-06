@@ -1,0 +1,9 @@
+﻿{
+	"title":"requireJS (1)- CMD标准",
+	"time":"2017年9月5日18:03:20",
+	"content":"<p>&nbsp;&nbsp;&nbsp;&nbsp;异步模块定义（AMD）是JavaScript的编程语言规范。它定义了一个定义代码模块及其依赖关系的应用程序编程接口（API），并根据需要异步加载它们。AMD的实施提供以下好处:网站性能改进。AMD实现加载较小的JavaScript文件，然后仅在需要时才加载。更少的页面错误。AMD实现允许开发人员定义在执行模块之前必须加载的依赖项，因此该模块不会尝试使用尚不可用的外部代码。除了在运行时加载多个JavaScript文件，AMD实现允许开发人员以更小，更逻辑有组织的文件封装代码，其方式与其他编程语言（如Java）类似。对于生产和部署，开发人员可以串联和运行如下基于AMD API的JavaScript模块到一个文件中，同为传统的JavaScript。AMD规范由Dojo Toolkit，RequireJS和ScriptManJS实现。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;RequireJS是一个非常小巧的JavaScript模块载入框架，是AMD规范最好的实现者之一。最新版本的RequireJS压缩后只有14K，堪称非常轻量。它还同时可以和其他的框架协同工作，使用RequireJS必将使您的前端代码质量得以提升</p>",
+	"recommend":[{
+		"title":"requirejs (2)- AMD标准",
+		"url":"detail.html?data=requirejs2"
+	}]
+}
