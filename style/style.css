@@ -17,6 +17,9 @@ body{
 	background:#f3f3f3;
 	font-family:Helvetica,Arial,"Lucida Family",Verdana,Tahoma,'Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei',sans-serif;
 }
+i[class^="icon-"]{
+	margin-right:5px
+}
 .nav>li>a{
 	padding:20px 30px;
 	color:#404040;
@@ -150,7 +153,8 @@ button.btn:focus:active{
 	display:inline-block;
 	padding:10px 0;
 	background:none;
-	border:0px
+	border:0px;
+	margin-right:10px;
 }
 .tool-btn:focus{
 	border:0px;

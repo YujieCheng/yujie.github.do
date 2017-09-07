@@ -11,11 +11,13 @@ $(function(){
 	$.get("../data/"+data+".txt",function(d){
 		console.log(d)
 		var data=JSON.parse(d)
+		console.log(data)
 		var vm=new Vue({
 			el:"#content",
 			data:{
 				"article":data
 			}
 		});
-	})		
+	jQuery.syntax({theme: 'paper', blockLayout: 'fixed'});
+	})
 })
