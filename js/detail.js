@@ -8,16 +8,20 @@ $(function(){
 		}
 	})
 	var data=$.getQueryString("data");
-	$.get("../data/"+data+".txt",function(d){
+	$.get("../data/info/"+data+".txt",function(d){
 		console.log(d)
 		var data=JSON.parse(d)
 		console.log(data)
-		var vm=new Vue({
-			el:"#content",
-			data:{
-				"article":data
-			}
+		$.get(data.content,function(d){
+			data.content=d;
+			var vm=new Vue({
+				el:"#content",
+				data:{
+					"article":data
+				}
+			});
+			jQuery.syntax({theme: 'paper', blockLayout: 'fixed'});
 		});
-	jQuery.syntax({theme: 'paper', blockLayout: 'fixed'});
+		
 	})
 })

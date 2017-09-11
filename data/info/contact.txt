@@ -1,0 +1,7 @@
+﻿[{
+	"title":"Sea.js - CMD规范",
+	"introduce":"在 Sea.js 中，所有 JavaScript 模块都遵循 CMD（Common Module Definition） 模块定义规范。该规范明确了模块的基本书写格式和基本交互规则.",
+	"time":"2017年9月5日18:35:21",
+	"url":"html/detail.html?data=sea",
+	"article":[{}]
+}]

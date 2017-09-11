@@ -203,3 +203,17 @@ button.btn:focus:active{
 	 text-indent:32px;
 	 line-height:28px;
 }
+@media screen and (max-width:768px){
+	div.recommend{
+		display:none;
+	}
+	div.content{
+		width:auto;
+	}
+	div.container{
+		width:320px
+	}
+	#test{
+		display:none
+	}
+}

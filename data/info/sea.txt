@@ -1,0 +1,9 @@
+﻿{
+	"title":"Sea.js (1)- CMD规范",
+	"time":"2017年9月5日18:03:20",
+	"content":"../data/article/sea.html",
+	"recommend":[{
+		"title":"requirejs (2)- AMD规范",
+		"url":"detail.html?data=requirejs2"
+	}]
+}
