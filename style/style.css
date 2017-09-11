@@ -212,7 +212,7 @@ button.btn:focus:active{
 		width:auto;
 	}
 	div.container{
-		width:320px
+		width:100%
 	}
 	#test{
 		display:none
