@@ -1,0 +1,9 @@
+﻿{
+	"title":"require.js - AMD规范",
+	"time":"2017年9月5日18:03:20",
+	"content":"../data/article/require.html",
+	"recommend":[{
+		"title":"Sea.js - CMD规范",
+		"url":"detail.html?data=sea"
+	}]
+}
