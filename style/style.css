@@ -218,4 +218,11 @@ button.btn:focus:active{
 	#test{
 		display:none
 	}
+	ul.nav>li{
+		display:inline;
+		float:left;
+	}
+	ul.navbar-nav{
+		margin:auto
+	}
 }
