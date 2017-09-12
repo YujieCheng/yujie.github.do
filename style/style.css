@@ -204,7 +204,13 @@ button.btn:focus:active{
 	 text-indent:32px;
 	 line-height:28px;
 }
+.forPhone{
+	display:none;
+}
 @media screen and (max-width:768px){
+	.forPhone{
+		display:inline;
+	}
 	div.recommend{
 		display:none;
 	}
