@@ -225,7 +225,7 @@ button.btn:focus:active{
 	ul.navbar-nav{
 		margin:auto
 	}
-	div.article-title-content{
-		width:100%
+	div.article-title-info{
+		display:none;
 	}
 }
