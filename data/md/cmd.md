@@ -1,4 +1,8 @@
-﻿在 Sea.js 中，所有 JavaScript 模块都遵循 CMD（Common Module Definition） 模块定义规范。该规范明确了模块的基本书写格式和基本交互规则.
+﻿<!-- toc -->
+
+<!-- reuirejs -->
+
+在 Sea.js 中，所有 JavaScript 模块都遵循 CMD（Common Module Definition） 模块定义规范。该规范明确了模块的基本书写格式和基本交互规则.
 
 在 CMD 规范中，一个模块就是一个文件。代码的书写格式如下：
 <pre><code class='syntax brush-javascript'>define(factory);

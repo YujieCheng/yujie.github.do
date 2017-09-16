@@ -21,13 +21,13 @@ $(function(){
 				}
 			});
 			jQuery.syntax({theme: 'paper', blockLayout: 'fixed'});
-			$('a[href*=#],area[href*=#]').click(function() {  
+			$('a[href*="#"],area[href*="#"]').click(function() {  
 				console.log(this.pathname)  
 				if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {  
 					var $target = $(this.hash);  
 					$target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');  
 					if ($target.length) {  
-						var targetOffset = $target.offset().top-50;  
+						var targetOffset = $target.offset().top-60;  
 						$('html,body').animate({  
 									scrollTop: targetOffset  
 								},  

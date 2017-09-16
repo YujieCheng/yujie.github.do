@@ -1,36 +1,35 @@
-<!-- toc -->
 <ul>
-<li><a href="#api%E8%A7%84%E8%8C%83">API规范</a>
+<li><a href="#APIE8A784E88C83">API规范</a>
 <ul>
-<li><a href="#define%E5%87%BD%E6%95%B0">define()函数</a>
+<li><a href="#defineE587BDE695B0">define()函数</a>
 <ul>
 <li><a href="#id">id</a></li>
-<li><a href="#%E6%A8%A1%E5%9D%97id%E7%9A%84%E6%A0%BC%E5%BC%8F">模块id的格式</a></li>
-<li><a href="#%E4%BE%9D%E8%B5%96">依赖</a></li>
+<li><a href="#E6A8A1E59D97idE79A84E6A0BCE5BC8F">模块id的格式</a></li>
+<li><a href="#E4BE9DE8B596">依赖</a></li>
 <li><a href="#factory">factory</a></li>
 </ul></li>
-<li><a href="#defineamd%E5%B1%9E%E6%80%A7">define.amd属性</a></li>
-<li><a href="#%E4%B8%80%E6%AC%A1%E8%BF%90%E8%BE%93%E5%A4%9A%E4%B8%AA%E6%A8%A1%E5%9D%97">一次运输多个模块</a></li>
+<li><a href="#defineamdE5B19EE680A7">define.amd属性</a></li>
+<li><a href="#E4B880E6ACA1E8BF90E8BE93E5A49AE4B8AAE6A8A1E59D97">一次运输多个模块</a></li>
 </ul></li>
-<li><a href="#%E4%BE%8B%E5%AD%90">例子</a>
+<li><a href="#E4BE8BE5AD90">例子</a>
 <ul>
-<li><a href="#%E4%BD%BF%E7%94%A8require%E5%92%8Cexport">使用require和export</a></li>
-<li><a href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">全局变量</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">使用说明</a></li>
-<li><a href="#%E4%B8%8Ecommonjs%E7%9A%84%E5%85%B3%E7%B3%BB">与CommonJS的关系</a></li>
+<li><a href="#E4BDBFE794A8requireE5928Cexport">使用require和export</a></li>
+<li><a href="#E585A8E5B180E58F98E9878F">全局变量</a></li>
+<li><a href="#E4BDBFE794A8E8AFB4E6988E">使用说明</a></li>
+<li><a href="#E4B88ECommonJSE79A84E585B3E7B3BB">与CommonJS的关系</a><!-- toc --></li>
 </ul></li>
 </ul>
-<!-- tocstop -->
+<!-- reuirejs -->
 <p>异步模块定义（AMD)的API指定了一种定义模块的规范，使得模块及其依赖关系可以被异步加载。浏览器的同步加载导致了性能、可用性、调试和跨域访问问题，而AMD规范就能解决这些问题，使得浏览器的可以异步加载。</p>
-<h1 id="API%E8%A7%84%E8%8C%83">API规范</h1>
-<h2 id="define()%E5%87%BD%E6%95%B0">define()函数</h2>
+<h1 id="APIE8A784E88C83">API规范</h1>
+<h2 id="defineE587BDE695B0">define()函数</h2>
 <p>该规范定义了可用作自由变量或全局变量的单个函数“define”。功能的签名：</p>
 <pre><code class='syntax brush-javascript'>
     define(id?,dependencies?,factory);
 </code></pre>
 <h3 id="id">id</h3>
 <p>第一个参数id是一个字符串,它指定要定义的模块的id。此参数是可选的，如果不存在，则模块id默认为加载程序请求给定响应脚本的模块的ID。当存在时，模块id必须是“top-level”或绝对id（不允许使用相对ids）。</p>
-<h3 id="%E6%A8%A1%E5%9D%97id%E7%9A%84%E6%A0%BC%E5%BC%8F">模块id的格式</h3>
+<h3 id="E6A8A1E59D97idE79A84E6A0BCE5BC8F">模块id的格式</h3>
 <p>模块ID可用于标识正在定义的模块，并且它们也用于依赖性数组参数。AMD中的模块ID是CommonJS模块标识符允许的超集。从该页面引用：</p>
 <ul>
 <li>模块标识符是由正斜杠分隔的“术语”字符串。</li>
@@ -47,7 +46,7 @@
 <li>如果模块&quot;a/b/c&quot;请求&quot;./e&quot;，则解析为&quot;a/b/e&quot;
 如果在AMD实现，支持<a href="https://github.com/amdjs/amdjs-api/wiki/%E5%8A%A0%E8%BD%BD%E5%99%A8%E6%8F%92%E4%BB%B6%28Loader-Plugins%29">插件加载器(Loader-Plugins)</a> ，那么“！” 用于将加载程序插件的模块ID与插件的资源ID分开。由于插件资源ids可以是非常自由的形式，因此大多数字符应该被允许用于插件资源ids。</li>
 </ul>
-<h3 id="%E4%BE%9D%E8%B5%96">依赖</h3>
+<h3 id="E4BE9DE8B596">依赖</h3>
 <p>第二个参数依赖关系是模块id的数组文字，它是被定义的模块所需的依赖关系。必须在执行模块工厂函数之前解决依赖关系，并将解析的值作为参数传递给工厂函数，其中参数位置与依赖关系数组中的索引相对应。</p>
 <p>依赖关系ID可以是相对ids，并且应该相对于被定义的模块来解决。换句话说，相对ids是相对于模块的id解析的，而不是找到模块的id的路径。</p>
 <p>此规范定义了具有不同分辨率的三个特殊依赖名称。如果依赖列表中出现“require”，“exports”或“module”的值，则该参数应解析为由CommonJS模块规范定义的相应的可变变量。</p>
@@ -59,7 +58,7 @@
 <p>如果省略了依赖参数，则模块加载程序可以选择以require语句的形式扫描工厂函数的依赖关系（字面上以require（“module-id”）的形式）。第一个参数必须字面上被命名为要求这个工作。</p>
 <p>在某些情况下，模块加载程序可能会选择不扫描依赖关系，这是由于代码大小的限制或缺少toString对功能的支持（Opera Mobile已知缺少toString对函数的支持）。</p>
 <p>如果存在依赖参数，则模块加载程序不应在工厂函数内扫描依赖项。</p>
-<h2 id="define.amd%E5%B1%9E%E6%80%A7">define.amd属性</h2>
+<h2 id="defineamdE5B19EE680A7">define.amd属性</h2>
 <p>为了允许一个清晰的指示符，全局定义函数（根据脚本src浏览器加载的需要）符合AMD API，任何全局定义函数应该有一个名为“amd”的属性，其值是一个对象。这有助于避免与可能定义不符合AMD API的define（）函数的任何其他现有JavaScript代码的冲突。</p>
 <p>目前没有指定define.amd对象中的属性。它可以被实现者使用，他们希望通知实现支持的基本API之外的其他功能。</p>
 <p>存在具有对象值的define.amd属性表示符合此API。如果有其他版本的API，它可能会定义另一个属性，如define.amd2，以指示符合该版本的API的实现。</p>
@@ -69,10 +68,10 @@
     };</pre></code>
 最低定义：
 <pre><code class='syntax brush-javascript'>define.amd = {};</pre></code>
-<h2 id="%E4%B8%80%E6%AC%A1%E8%BF%90%E8%BE%93%E5%A4%9A%E4%B8%AA%E6%A8%A1%E5%9D%97">一次运输多个模块</h2>
+<h2 id="E4B880E6ACA1E8BF90E8BE93E5A49AE4B8AAE6A8A1E59D97">一次运输多个模块</h2>
 <p>可以在单个脚本中进行多个定义调用。定义调用的顺序应该不重要。早期的模块定义可以指定稍后在同一脚本中定义的依赖关系。模块加载器有责任延迟加载未解决的依赖关系，直到整个脚本被加载以防止不必要的请求。</p>
-<h1 id="%E4%BE%8B%E5%AD%90">例子</h1>
-<h2 id="%E4%BD%BF%E7%94%A8require%E5%92%8Cexport">使用require和export</h2>
+<h1 id="E4BE8BE5AD90">例子</h1>
+<h2 id="E4BDBFE794A8requireE5928Cexport">使用require和export</h2>
 <p>设置ID为“alpha”的模块，它使用require，exports和ID为“beta”的模块：</p>
 <pre><code class='syntax brush-javascript'> define("alpha", ["require", "exports", "beta"], function (require, exports, beta) {
        exports.verb = function() {
@@ -102,11 +101,11 @@
 <pre><code> exports.action = function () {};
 </code></pre>
 <p>});</pre></code></p>
-<h2 id="%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">全局变量</h2>
+<h2 id="E585A8E5B180E58F98E9878F">全局变量</h2>
 <p>本规范保留用于实现本规范的全局变量“define”，即包元数据异步定义API，并保留给其他未来的CommonJS API。模块加载程序不应该向此函数添加其他方法或属性。</p>
 <p>本规范保留了模块装载机使用的全局变量“require”。模块加载器可以自由使用这个全局变量，因为它们是合适的。他们可以使用该变量，并根据模块加载器特定功能的需要向其添加任何属性或函数。他们也可以选择不使用“需求”。</p>
-<h2 id="%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">使用说明</h2>
+<h2 id="E4BDBFE794A8E8AFB4E6988E">使用说明</h2>
 <p>建议使用“define（...）”的文字形式定义调用，以便使用静态分析工具（如构建工具）正常工作。</p>
-<h2 id="%E4%B8%8ECommonJS%E7%9A%84%E5%85%B3%E7%B3%BB">与CommonJS的关系</h2>
+<h2 id="E4B88ECommonJSE79A84E585B3E7B3BB">与CommonJS的关系</h2>
 <p>该API的一个版本作为传输格式在CommonJS维基上开始，作为Modules Transport / C，但是随着时间的推移，它也包含一个模块定义API。关于推荐这个API作为模块定义API的CommonJS列表中未达成共识。API已转移到自己的wiki和讨论组。</p>
 <p>只要CommonJS模块不使用计算的，同步的require（''）调用，AMD就可以用作CommonJS模块的传输格式。使用计算的synchronized require（''）代码的CommonJS代码可以转换为使用大多数AMD加载器支持的回调式需求。</p>
