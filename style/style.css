@@ -207,6 +207,25 @@ button.btn:focus:active{
 .forPhone{
 	display:none;
 }
+.category-content{
+	width:100%;
+	background:white;
+	border-radius:6px;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	background: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+	margin-top:10px;
+}
+.category-list{
+	padding-top:10px
+}
+.category-list ul{
+	list-style:none
+}
 @media screen and (max-width:768px){
 	.forPhone{
 		display:inline;
