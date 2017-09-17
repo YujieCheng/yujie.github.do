@@ -1,0 +1,9 @@
+{
+	"title":"require.js - 实战",
+	"time":"2017年9月5日18:03:20",
+	"content":"../data/article/requireinaction.html",
+	"recommend":[{
+		"title":"require.js - AMD规范",
+		"url":"detail.html?data=require"
+	}]
+}

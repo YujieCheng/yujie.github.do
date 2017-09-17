@@ -60,7 +60,7 @@
 		</div>
 		<div id="test" class="recommend-list">
 			<ul >
-				<li v-for="item in article"><a href="">{{item.title}}</a></li>
+				<li v-for="item in article"><a v-bind:href="item.url">{{item.title}}</a></li>
 			</ul>
 		</div>
 	</div>
