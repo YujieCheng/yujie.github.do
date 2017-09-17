@@ -16,21 +16,20 @@
 <h1 id="E6A682E8BFB0">概述</h1>
 <p>最近项目中使用过了requirejs，有点想法跟大家分享一下</p>
 <p>requirejs在实际应用中有很多的好处，比如传统的映入js的方法是添加n多的script标签，如下：</p>
-<pre><code class='syntax brush-html'>
-<script src="..."></script>
-<script src="..."></script>
-<script src="..."></script>
-<script src="..."></script>
+<pre><code class='syntax brush-html'>&lt;script src=&quot;...&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;...&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;...&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;...&quot;&gt;&lt;/script&gt;
 </code></pre>
 <p>这样的方式对于业务不是很复杂的项目是没有任何问题的，但是一旦业务复杂了，js文件应用多了，就不容易去管理，而requirejs的功能就体现了出来，作为一个js的模块加载器，可以异步的加载js文件，每个js按照之前文章中的define去定义，在主js文件中将该模块的路径定义了就可以很快的去引入js文件，不需要去修改html文件，这样也方便管理。接下来我们一步步去学习require中的Api，另外，我还会教大家一些实用的技巧，会让requirejs的使用变得更为方便。</p>
 <h1 id="E5BC95E794A8reuqirejs">引用reuqirejs</h1>
 <p>如何在页面中引用requirejs？想来应该跟一般的js文件的引用是一样的，但是这两者之间还是有点不同的。两者的差别如下：</p>
-<pre><code class='syntax brush-html'>
-<!-- 传统引用js的方式 -->
-<script src="jquery.js" charset="utf-8" type="text/javascript"></script>
-<script src="underscore.js" charset="utf-8" type="text/javascript"></script>
-<!-- requirejs方式-->
-<script src="require.js" data-main="app.js" charset="utf-8" type="text/javascript"></script>
+<pre><code class='syntax brush-html'>&lt;!-- &#20256;&#32479;&#24341;&#29992;js&#30340;&#26041;&#24335; --&gt;
+&lt;script src=&quot;jquery.js&quot; charset=&quot;utf-8&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;underscore.js&quot; charset=&quot;utf-8&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+&lt;!-- requirejs&#26041;&#24335;--&gt;
+&lt;script src=&quot;require.js&quot; data-main=&quot;app.js&quot; charset=&quot;utf-8&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 </code></pre>
 <p>通过上面的代码应该很容易就能分辨出两者引用的差别，差了一个data-main属性，这个属性就是用来定义真正js入口的地方。如以上的代码，该页面的js入口就是app.js,所以你所有的页面逻辑都应该存储在app.js中，这个js也叫做主模块，一般一个页面只需要这一个主模块，就相当于main函数。</p>
 <h1 id="E4BDBFE794A8requirejs">使用requirejs</h1>
@@ -121,8 +120,8 @@ requirejs.config({
 define(['backbone'], function (Backbone) {
 return Backbone.Model.extend({});
 });
-</code></pre>
-注意：<b>shim</b>选项仅仅用于配置非AMD规范的脚本(不是用define定义的模块)，如果shim用在了AMD规范模块下，就不能正常工作，并且init配置和exports也不会起作用</p>
+</code></pre></p>
+<p>注意：<b>shim</b>选项仅仅用于配置非AMD规范的脚本(不是用define定义的模块)，如果shim用在了AMD规范模块下，就不能正常工作，并且init配置和exports也不会起作用</p>
 <p>如果只是对于jQuery或Backbone插件的“模块”，不需要导出任何模块值，shim配置只能是一个依赖关系的数组：</p>
 <pre><code class='syntax brush-javascript'>
 requirejs.config({
@@ -152,6 +151,7 @@ requirejs.config({
     }
 });
 <p></code></pre></p>
+<p>其他的一些高级配置和运用将在下一篇文章中介绍</p>
 <h1 id="E6A8A1E59D97E79A84E5AE9AE4B989">模块的定义</h1>
 <h2 id="defineE587BDE695B0">define函数</h2>
 <p>关于require怎么定义模块，请参考<a href="detail.html?data=require">require.js - AMD规范</a>这篇文章</p>
