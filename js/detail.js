@@ -20,6 +20,7 @@ $(function(){
 					"article":data
 				}
 			});
+			$('body').show()
 			jQuery.syntax({theme: 'paper', blockLayout: 'fixed'});
 			$('a[href*="#"],area[href*="#"]').click(function() {  
 				console.log(this.pathname)  

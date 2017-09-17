@@ -7,7 +7,8 @@
 			data:{
 				"article":data
 			}
-		});		
+		});
+		$('body').show();
 	})
 	particlesJS('test',{
     "particles": {

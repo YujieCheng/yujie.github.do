@@ -234,4 +234,7 @@ button.btn:focus:active{
 	div.article-title-info{
 		display:none;
 	}
+	.article-title-content{
+		padding-left:10px;
+	}
 }
