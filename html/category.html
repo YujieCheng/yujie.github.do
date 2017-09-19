@@ -36,8 +36,9 @@
 		</div>-->
 		<h1>目录</h1>
 		<div class="category-list">
+			<input v-model="search" id="search" placeholder="搜索" class="form-control" type="text"/>
 			<ul v-for="item in article">
-				<li><a v-bind:href="'../'+item.url">{{item.title}}</a></li>
+				<li><a v-bind:href="'../'+item.url">{{item.title | search}}</a></li>
 			</ul>
 		</div>
 	</div>
