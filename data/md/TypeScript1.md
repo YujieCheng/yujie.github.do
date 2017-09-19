@@ -98,7 +98,7 @@ function print(){
 			console.log(i);
 }
 
-这会得到正确的结果。
+这会得到正确的结果。	
 
 
 
