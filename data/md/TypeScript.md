@@ -155,12 +155,12 @@ let n: null = null;
 
 ### Never
 
-这个类型有点抽象，有兴趣的可以去官网看看。我的理解是never 就是一个强行理解出来的东西，根本不算是什么类型，我们都知道js中没有返回值的函数都会返回一个undefined，所以 TypeScript 为了区别，强行加了一个Never,它的唯一作用大概是表示一个函数没有返回值吧。
+这个类型有点抽象，有兴趣的可以去官网看看。这个类型没有什么好理解的，永远用不到。
 
-<pre><code>
-//函数没有return ，那么该函数的返回值就是never
-function test():never{
-	
+<pre><code>//函数无限循环。
+function test(){
+	while(true){
+	}
 }
 
 //error undefined 不是 never
@@ -175,31 +175,9 @@ function test2():void{
 
 //error never 不能赋值给 void
 function test2():void{
-	return test1();
+	return test();
 }
 </code></pre>
-
-never类型表示的是那些永不存在的值的类型。 例如， never类型是那些总是会抛出异常或根本就不会有返回值的函数表达式或箭头函数表达式的返回值类型； 变量也可能是 never类型，当它们被永不为真的类型保护所约束时。
-
-never类型是任何类型的子类型，也可以赋值给任何类型；然而，没有类型是never的子类型或可以赋值给never类型（除了never本身之外）。 即使 any也不可以赋值给never。
-
-下面是一些返回never类型的函数：
-
-// 返回never的函数必须存在无法达到的终点
-function error(message: string): never {
-    throw new Error(message);
-}
-
-// 推断的返回值类型为never
-function fail() {
-    return error("Something failed");
-}
-
-// 返回never的函数必须存在无法达到的终点
-function infiniteLoop(): never {
-    while (true) {
-    }
-}
 
 ### 类型断言
 
@@ -209,19 +187,17 @@ function infiniteLoop(): never {
 
 类型断言有两种形式。 其一是“尖括号”语法：
 
-复制到剪切板
-let someValue: any = "this is a string";
+<pre><code>let someValue: any = "this is a string";
+let strLength: number = (<string>someValue).length;</code></pre>
 
-let strLength: number = (<string>someValue).length;
 另一个为as语法：
 
-复制到剪切板
-let someValue: any = "this is a string";
+<pre><code>let someValue: any = "this is a string";
+let strLength: number = (someValue as string).length;</code></pre>
 
-let strLength: number = (someValue as string).length;
 两种形式是等价的。 至于使用哪个大多数情况下是凭个人喜好；然而，当你在TypeScript里使用JSX时，只有 as语法断言是被允许的。
 
-关于let
+### 关于let
 
 你可能已经注意到了，我们使用let关键字来代替大家所熟悉的JavaScript关键字var。 let关键字是JavaScript的一个新概念，TypeScript实现了它。 我们会在以后详细介绍它，很多常见的问题都可以通过使用 let来解决，所以尽可能地使用let来代替var吧。
 
