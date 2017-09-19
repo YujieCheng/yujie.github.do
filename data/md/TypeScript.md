@@ -1,6 +1,16 @@
 2017年9月18日
 
-# TypeScript入门(一)
+#TypeScript入门(一)
+
+TeypeScript 是 Javascript 的超集（超集的意思就是 Javascript 是它的子集），它可以编译成纯的 Javascript 。
+
+>[TypeScript 官网传送门](https://www.tslang.cn/)
+
+TypeScript 为javascript添加了许多的语言特性，使得javascript更像一个高级的编程语言,有着高级语言才有的严格的语法，严格的数据类型，还添加了诸如枚举 泛型等高级的数据类型。但在它的官网上有这么一句话，说的有点遮遮掩掩。
+
+> TypeScript 可以在任何浏览器、任何计算机和任何操作系统上运行
+
+注意： TypeScript 不是 Javascript ,它必须经过编译成 Javascript 才可以在浏览器上运行。
 
 ## 数据类型
 
@@ -29,10 +39,10 @@ let str: string = 'hello world';
 str='hello world';
 </code></pre>
 
-你还可以使用模板字符串，定义多行文本和内嵌表达式。用反引号'`'(就是1旁边的)包围，变量或表达式用${ expr }嵌入，用'.'链接字符串。
+你还可以使用模板字符串，定义多行文本和内嵌表达式。用反引号'\`'(就是1旁边的)包围，变量或表达式用${ expr }嵌入，用'.'链接字符串。
 
 <pre><code>
-let name: string = `Gene`;
+let name: string = 'Gene';
 let age: number = 37;
 let sentence: string = `Hello, my name is ${ name }.
 I'll be ${ age + 1 } years old next month.`;
@@ -144,6 +154,30 @@ let n: null = null;
 </code></pre>
 
 ### Never
+
+这个类型有点抽象，有兴趣的可以去官网看看。我的理解是never 就是一个强行理解出来的东西，根本不算是什么类型，我们都知道js中没有返回值的函数都会返回一个undefined，所以 TypeScript 为了区别，强行加了一个Never,它的唯一作用大概是表示一个函数没有返回值吧。
+
+<pre><code>
+//函数没有return ，那么该函数的返回值就是never
+function test():never{
+	
+}
+
+//error undefined 不是 never
+function test1():never{
+	return
+}
+
+//ok, void 类型只能被赋值 null 和 undefined
+function test2():void{
+	return
+}
+
+//error never 不能赋值给 void
+function test2():void{
+	return test1();
+}
+</code></pre>
 
 never类型表示的是那些永不存在的值的类型。 例如， never类型是那些总是会抛出异常或根本就不会有返回值的函数表达式或箭头函数表达式的返回值类型； 变量也可能是 never类型，当它们被永不为真的类型保护所约束时。
 
