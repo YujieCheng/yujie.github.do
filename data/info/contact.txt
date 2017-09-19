@@ -19,5 +19,12 @@
 		"url": "html/detail.html?data=requireinaction",
 		"article": [{}
 		]
+	}, {
+		"title": "TypeScript - 数据类型",
+		"introduce": "TeypeScript 是 Javascript 的超集（超集的意思就是 Javascript 是它的子集），它可以编译成纯的 Javascript 。",
+		"time": "2017年9月5日18:35:21",
+		"url": "html/detail.html?data=TypeScript",
+		"article": [{}
+		]
 	}
 ]
