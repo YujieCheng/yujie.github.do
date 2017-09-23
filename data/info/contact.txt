@@ -26,5 +26,18 @@
 		"url": "html/detail.html?data=TypeScript",
 		"article": [{}
 		]
+	}, {
+		"title": "TypeScript - 变量声明",
+		"introduce": "这几年一直写js代码都忘记了c语言中怎么声明变量了，当然也忘记了变量的各种定义域，渐渐习惯了js中诡异的定义域。如果一直写js代码倒是没有任何问题，但是一旦去写别的代码，就会出现很多问题。 TypeScript 中引入 let 关键字，有着严格的作用域规范，当然和es6 中的let的用法一样的。",
+		"time": "2017年9月6日18:35:21",
+		"url": "html/detail.html?data=TypeScript1",
+		"article": [{}
+		]
+	}, {
+		"title": "TypeScript - 接口",
+		"introduce": "本章节将要学习的是接口，接口是什么，接口是实体提供给外界的一种抽象化概念。",
+		"time": "2017年9月6日18:35:21",
+		"url": "html/detail.html?data=TypeScript2",
+		"article": [{}]
 	}
 ]

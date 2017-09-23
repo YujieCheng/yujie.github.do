@@ -1,0 +1,9 @@
+{
+	"title":"TypeScript - 接口",
+	"time":"2017年9月5日18:03:20",
+	"content":"../data/article/TypeScript2.html",
+	"recommend":[{
+		"title":"TypeScript - 数据类型",
+		"url":"detail.html?data=TypeScript"
+	}]
+}

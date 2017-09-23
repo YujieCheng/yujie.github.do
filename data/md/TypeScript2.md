@@ -176,6 +176,9 @@ TypeScript 的类也可以使用implements 关键字去实现接口，来强制�
 <pre><code class='syntax brush-java'>class Apple implements Tings{
 	count:number;
 	price:number;
+	getTotlePrice():number{
+		return this.count*this.price;
+	} ;
 	constructor(count: number,price:number) {
         this.count = count;
         this.price = price;
@@ -183,8 +186,94 @@ TypeScript 的类也可以使用implements 关键字去实现接口，来强制�
 }
 </code></pre>
 
+这个例子就是定义了一个Apple类实现了接口Tings，所以必须在Apple类中声明count和price这两个属性和getTotlePrice这个，不然编译器就会报错。
 
+### 类静态部分与实例部分的区别
 
+当操作类和接口时，你要知道类是具有两个类型的，静态部分和实例部分。在java中用static 关键字去声明静态类、静态方法。同样的，在TypeScript 也是用static关键字来定义静态属性的。 你会注意到，当你用构造器去定义一个接口并试图定义一个类去实现这个接口时会得到一个错误：
+
+<pre><code class='syntax brush-java'>interface FruitsConstructor{
+	new (count:number,price:number);
+} 
+class Apple implements FruitsConstructor{
+	createTime:Date;
+	constructor(count: number, price: number) { }
+}
+</code></pre>
+
+因为类在实现一个接口的过程中，只会去检查实例部分,静态部分并不会去检查,constructor是类的静态部分，所以TypeScript 不对其进行检查。
+
+因此，我们应该直接去操作类的静态属性。
+
+<pre><code class='syntax brush-java'>interface FruitsConstructor{
+	new (count:number,price:number);
+} 
+//定义一个构造器函数，该函数指定了两个参数，如果某个类实现了这个接口，
+//那么他的构造函数必须含有两个参数。
+interface Fruits{
+	count:number;
+	price:number;
+} 
+function createFruits (fruit:FruitsConstructor,count:number,price:number):Fruits{
+	return new fruit(count,price);
+}
+class Banana implements Fruits {
+	count:number;
+	price:number;
+	color:'yellow';
+	constructor(c:number,p:number){};
+}
+let f=createFruits(Banana,5,2.5);
+</code></pre>
+
+这个确实很难理解 new 一个函数，简单的理解就是 FruitsConstructor 接口定义了实现这个接口的类的构造函数的参数。这部分的内容，计划在以后的章节中再提。
+
+## 继承接口
+
+和类一样，接口也可以被继承
+
+<pre><code class='syntax brush-java'>interface Fruits{
+	count:number;
+	price:number;
+} 
+interface Apple extends Fruits {
+	color:string;
+}
+</code></pre>
+
+一个接口可以继承多个接口，组成一个合成接口。
+
+## 接口继承 类
+
+当接口继承了一个类类型时，它会继承类的成员但不包括其实现。 就好像接口声明了所有类中存在的成员，但并没有提供具体实现一样。 接口同样会继承到类的private和protected成员。 这意味着当你创建了一个接口继承了一个拥有私有或受保护的成员的类时，这个接口类型只能被这个类或其子类所实现（implement）。
+
+当你有一个庞大的继承结构时这很有用，但要指出的是你的代码只在子类拥有特定属性时起作用。 这个子类除了继承至基类外与基类没有任何关系。 
+
+<pre><code class='syntax brush-java'>class Control {
+    private state: any;
+}
+
+interface SelectableControl extends Control {
+    select(): void;
+}
+
+class Button extends Control implements SelectableControl {
+    select() { }
+}
+
+class TextBox extends Control {
+
+}
+
+// 错误：“Image”类型缺少“state”属性。
+class Image implements SelectableControl {
+    select() { }
+}
+
+class Location {
+
+}
+</code></pre>
 
 
 
