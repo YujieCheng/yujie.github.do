@@ -1,34 +1,4 @@
-﻿$(function(){
-	$.get({
-		dataType:'json',
-		contentType:'application/json',
-		url:'data/info/contact.json',
-		success:function(d){
-			console.log(d)
-			var vm=new Vue({
-			el:"#articleList",
-			data:{
-				"article":d
-			}
-		});
-		$('body').show();
-		}
-	})
-	/* $.get("data/info/contact.txt",function(d){
-		var data=JSON.parse(d);
-		console.log(data[0])
-		var vm=new Vue({
-			el:"#articleList",
-			data:{
-				"article":data
-			}
-		});
-		$('body').show();
-	}) */
-	particlesJS.load('particle', 'dependence/particle.json', function() {
-  console.log('callback - particles.js config loaded');
-});
-	/*particlesJS('particle',{
+{
     "particles": {
       "number": {
         "value": 50,
@@ -138,5 +108,4 @@
       "background_repeat": "no-repeat",
       "background_size": "cover"
     }
-  })*/
-})
+  }
