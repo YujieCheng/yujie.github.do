@@ -82,7 +82,39 @@ new Apple('red',10,3.5).setShape('cricle')//ok
 
 ### protected
 
+protected在子类中依旧可以访问，其他的和private 一样。
 
+### readonly
+
+你可以使用readonly关键字将属性设置为只读的。 只读属性必须在声明时或构造函数里被初始化。
+
+## 静态属性
+
+静态属性是不需要实例化直接用类的名称就可以访问的成员变量。
+
+<pre><code class='syntax brush-java'>class Apple extends Fruits{
+	static shape:string;
+	protected owner:string;
+	constructor(c:string,count:number,price:number){super(c,count,price)}
+	public getTotlePrice(){
+		console.log('apple price'+ this.count*this.price)
+	}
+	public setShape(n:string){
+		this.shape=n;
+	}
+}
+</code></pre>
+
+## 抽象类
+
+抽象类做为其它派生类的基类使用。 它们一般不会直接被实例化。 不同于接口，抽象类可以包含成员的实现细节。 abstract关键字是用于定义抽象类和在抽象类内部定义抽象方法。
+
+<pre><code class='syntax brush-java'>abstract class Fruits {
+	abstract eat():void;
+}
+</code></pre>
+
+抽象类中抽象方法不包含具体的实现方法，它的具体实现必须在派生类中实现，抽象方法的语法跟接口里的方法很想，不同的是抽象方法可以添加访问修饰符
 
 
 
