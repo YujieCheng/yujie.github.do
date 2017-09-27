@@ -4,7 +4,7 @@
 
 TeypeScript 是 Javascript 的超集（超集的意思就是 Javascript 是它的子集），它可以编译成纯的 Javascript 。
 
->[TypeScript 官网传送门](https://www.tslang.cn/)
+>[TypeScript 官网传送门](http://www.typescriptlang.org/)
 
 TypeScript 为javascript添加了许多的语言特性，使得javascript更像一个高级的编程语言,有着高级语言才有的严格的语法，严格的数据类型，还添加了诸如枚举 泛型等高级的数据类型。但在它的官网上有这么一句话，说的有点遮遮掩掩。
 
