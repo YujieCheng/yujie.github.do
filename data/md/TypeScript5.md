@@ -1,6 +1,7 @@
 ﻿接下来我们介绍一个非常重要的类型，他可以帮助我们创建一个良好的组建。组建不仅仅能支持当前类型，而且支持未来的类型。在JAVA中，可以用泛型来创建可重用的组建一个组建可以支持多种数据类型，你可以使用自己定义的数据类型，来作为函数参数的类型，list的类型，如下是java中的例子
+
 <pre><code class='syntax brush-java'>AyyayList<String> a = new ArrayList<String>();  
-ArrayList b = new ArrayList();  
+ArrayList b = new ArrayList();
 Class c1 = a.getClass();  
 Class c2 = b.getClass();  
 System.out.println(a == b); //true  
@@ -167,28 +168,3 @@ let t=getTotlePrice<Fruits>(f)
 关于泛型就讲到这里，想了解跟多请访问：
 
 >[TypeScript 官网传送门](http://www.typescriptlang.org/)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

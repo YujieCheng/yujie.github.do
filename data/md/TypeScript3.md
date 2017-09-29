@@ -125,29 +125,3 @@ protected在子类中依旧可以访问，其他的和private 一样。
 上面就是关于Ts中类的定义的全部内容，当然关于类还有一些高级技巧，有兴趣的可以去官网上学习
 
 >[TypeScript 官网传送门](http://www.typescriptlang.org/)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
